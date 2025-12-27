@@ -1,3 +1,5 @@
+import streamlit as st
+
 from services.gemini_service import GeminiService
 from utils.auth import check_session, login, logout, update_activity
 from steps.step_collection import step_collection
@@ -50,4 +52,5 @@ elif st.session_state.step == 2:
 
 elif st.session_state.step == 3:
     step_draft(st.session_state.draft)
+
 
