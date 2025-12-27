@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Garante que a raiz do projeto esteja no path
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 import streamlit as st
 
 from services.gemini_service import GeminiService
@@ -5,6 +11,7 @@ from utils.auth import check_session, login, logout, update_activity
 from steps.step_collection import step_collection
 from steps.step_analysis import step_analysis
 from steps.step_draft import step_draft
+
 
 st.set_page_config(page_title="JurisAI", layout="wide")
 
@@ -52,5 +59,6 @@ elif st.session_state.step == 2:
 
 elif st.session_state.step == 3:
     step_draft(st.session_state.draft)
+
 
 
